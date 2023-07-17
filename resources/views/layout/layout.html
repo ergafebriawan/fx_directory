@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fx Directory - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/asset/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="navbar">
+        <div>
+            <ul class="menu">
+                <li><a href="/">->Home</a></li>
+                <li><a href="/update">->Update</a></li>
+                <li><a href="/library">->Library</a></li>
+                <li><a href="/project">->Project</a></li>
+                <li><a href="/about">->About</a></li>
+            </ul>
+        </div>
+        <div class="riddle">riddle?</div>
+    </header>
+
+    <section class="page">
+        <div class="sidebar">
+            <h2>{% block title_menu %}{% endblock %}</h2>
+        </div>
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </section>
+
+    <footer class="footer">
+        <hr>
+        <p>
+            &copy;fx_directory
+        </p>
+    </footer>
+</body>
+
+</html>

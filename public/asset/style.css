@@ -1,0 +1,101 @@
+body{
+    background-color: black;
+    color: rgb(35, 224, 5);
+    font-family: 'Courier Prime', monospace;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu{
+    display: inline-table;
+    list-style: none;
+}
+
+.menu li{
+    float: left;
+    margin: 0 10px;
+}
+
+.menu li a{
+    color: rgb(35, 224, 5);
+    font-weight: bolder;
+}
+
+.riddle{
+    padding-top: 20px;
+    padding-right: 20px;
+    font-weight: bolder;
+}
+
+.page{
+    margin: 20px;
+    display: flex;
+    min-height: 77vh;
+}
+
+.sidebar{
+    min-width: 200px;
+    margin: 10px 30px;
+    border-right: 2px solid rgb(35, 224, 5);
+}
+
+.content{
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.head-content{
+    display: block;
+}
+
+.head-content a{
+    color: rgb(35, 224, 5);
+}
+
+.form-group{
+    display: block;
+}
+
+.form-input{
+    display: grid;
+    margin-bottom: 30px;
+    gap: 5px;
+}
+
+.form-input input{
+    background-color: black;
+    outline: 2px solid rgb(35, 224, 5);
+    color: rgb(35, 224, 5);
+    font-family: 'Courier Prime', monospace;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+.form-input textarea{
+    background-color: black;
+    outline: 2px solid rgb(35, 224, 5);
+    color: rgb(35, 224, 5);
+    font-family: 'Courier Prime', monospace;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+.btn{
+    background-color: black;
+    color: rgb(35, 224, 5);
+    outline: 2px solid rgb(35, 224, 5);
+    font-family: 'Courier Prime', monospace;
+    padding: 6px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.footer{
+    padding: 20px;
+    text-align: center;
+}

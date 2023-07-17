@@ -1,0 +1,21 @@
+{% extends "layout/layout.html" %}
+
+{% block title %} Upload Library {% endblock %}
+{% block title_menu %} Library {% endblock %}
+
+{% block content %}
+<h3>Upload new File</h3>
+<div class="form-group">
+    <form action="/library-upload" method="post">
+        <div class="form-input">
+            <label for="title">Title File</label>
+            <input type="text" name="in_title" id="title">
+        </div>
+        <div class="form-input">
+            <label for="lib">Add File</label>
+            <input type="file" name="in_lab" id="lab">
+        </div>
+        <input type="submit" value="Simpan" class="btn">
+    </form>
+</div>
+{% endblock %}
