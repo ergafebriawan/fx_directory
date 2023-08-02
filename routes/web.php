@@ -1,9 +1,4 @@
 <?php
-/*
- * Routing System
- * @hilmanrdn 18-01-2017
- */
-
 $app->get('/', '\App\Controllers\HomeController:index');
 $app->get('/about', '\App\Controllers\HomeController:about');
 
@@ -15,3 +10,4 @@ $app->get('/library', '\App\Controllers\LibraryController:index');
 $app->any('/library-upload', '\App\Controllers\LibraryController:add');
 
 $app->get('/update', '\App\Controllers\UpdateController:index');
+$app->any('/update-add', '\App\Controllers\UpdateController:add');

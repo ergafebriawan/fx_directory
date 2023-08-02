@@ -4,5 +4,19 @@
 {% block title_menu %} Update {% endblock %}
 
 {% block content %}
-<h3>This Update Page</h3>
+<h3>Add Update</h3>
+<div class="form-group">
+    <form action="/update-add" method="post">
+        <div class="form-input">
+            <label for="title">Title Update</label>
+            <input type="text" name="in_title" id="title" size="100" autofocus>
+        </div>
+        <div class="form-input">
+            <label for="content-textarea">Content Update</label>
+            <textarea name="in_content" id="content-textarea" cols="30" rows="30"></textarea>
+        </div>
+        <input type="submit" value="Save" class="btn">
+        <a href="/update" class="btn">Cancel</a>
+    </form>
+</div>
 {% endblock %}

@@ -12,4 +12,19 @@ class UpdateController extends BaseController
         return $this->c->view->render($response, 'update.html');
     }
 
+    public function add($request, $response){
+        if($request->isMethod('get')){
+            $title = $_POST['in_title'];
+            $content = $_POST['in_content'];
+
+            $data = [
+                "judul" => "hehe",
+                "konten" => "hehehehe"
+            ];
+            var_dump($data);
+        }else{
+            return $this->c->view->render($response, 'update-add.html');
+        }
+    }
+
 }
