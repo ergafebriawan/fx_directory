@@ -6,7 +6,7 @@
 {% block content %}
 <h3>Upload new File</h3>
 <div class="form-group">
-    <form action="/library-upload" method="post">
+    <form action="/library-upload" method="post" enctype="multipart/form-data">
         <div class="form-input">
             <label for="title">Title File</label>
             <input type="text" name="in_title" id="title">

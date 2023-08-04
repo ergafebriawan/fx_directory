@@ -4,7 +4,9 @@ $app->get('/about', '\App\Controllers\HomeController:about');
 
 $app->get('/project', '\App\Controllers\ProjectController:index');
 $app->any('/project-add', '\App\Controllers\ProjectController:add');
-$app->get('/project-detail', '\App\Controllers\ProjectController:detail');
+$app->get('/project-detail/{id}', '\App\Controllers\ProjectController:detail');
+$app->get('/project-delete{id}', '\App\Controllers\ProjectController:delete');
+$app->any('/project-update/{id}', '\App\Controllers\ProjectController:edit');
 
 $app->get('/library', '\App\Controllers\LibraryController:index');
 $app->any('/library-upload', '\App\Controllers\LibraryController:add');

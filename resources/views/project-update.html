@@ -4,5 +4,20 @@
 {% block title_menu %} Project {% endblock %}
 
 {% block content %}
-<h3>This Project Page</h3>
+<h3>Update Project</h3>
+<div class="form-group">
+    <form action="/project-update/{{data.id}}" method="post">
+        <input type="hidden" name="in_id" value="{{data.id}}">
+        <div class="form-input">
+            <label for="title">Title project</label>
+            <input type="text" name="in_title" id="title" size="100" value="{{data.title}}" autofocus>
+        </div>
+        <div class="form-input">
+            <label for="content-textarea">Content project</label>
+            <textarea name="in_content" id="content-textarea" cols="30" rows="30">{{data.content}}</textarea>
+        </div>
+        <input type="submit" value="Save" class="btn">
+        <a href="/project" class="btn">Cancel</a>
+    </form>
+</div>
 {% endblock %}

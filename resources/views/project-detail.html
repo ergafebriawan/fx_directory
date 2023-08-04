@@ -1,0 +1,22 @@
+{% extends "layout/layout.html" %}
+
+{% block title %} Project {% endblock %}
+{% block title_menu %} Project detail {% endblock %}
+
+{% block content %}
+<div class="head-detail">
+    <h3>{{data.title}}</h3>
+    <a href="/project"><-back</a>
+</div>
+<div class="linking">
+    <label>Document created at: {{data.created_at}}</label>
+</div>
+<div class="content-detail">
+    <p>
+        {{data.content|raw}}
+    </p>
+</div>
+<div class="linking">
+    <a href="/project" class="linking"><-back</a>
+</div>
+{% endblock %}

@@ -9,8 +9,10 @@
     <a href="/project-add">[+]Add Project</a>
 </div>
 <div>
-    <ul>
-
-    </ul>
+        <ul class="list-content">
+            {% for project in data %}
+            <li><a href="/project-detail/{{project.id}}">{{project.title}}</a> | <a href="/project-delete/{{project.id}}">[Delete]</a> | <a href="/project-update/{{project.id}}">[Edit]</a></li>
+            {% endfor %}
+        </ul>
 </div>
 {% endblock %}
