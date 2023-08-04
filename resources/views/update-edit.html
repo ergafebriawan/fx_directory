@@ -1,0 +1,23 @@
+{% extends "layout/layout.html" %}
+
+{% block title %} Update {% endblock %}
+{% block title_menu %} Update {% endblock %}
+
+{% block content %}
+<h3> Update</h3>
+<div class="form-group">
+    <form action="/update-edit/{{data.id}}" method="post">
+        <input type="hidden" name="in_id" value="{{data.id}}">
+        <div class="form-input">
+            <label for="title">Title Update</label>
+            <input type="text" name="in_title" id="title" size="100" value="{{data.title}}" autofocus>
+        </div>
+        <div class="form-input">
+            <label for="content-textarea">Content Update</label>
+            <textarea name="in_content" id="content-textarea" cols="30" rows="30">{{data.content}}</textarea>
+        </div>
+        <input type="submit" value="Save" class="btn">
+        <a href="/update" class="btn">Cancel</a>
+    </form>
+</div>
+{% endblock %}

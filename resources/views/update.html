@@ -9,8 +9,10 @@
     <a href="/update-add">[+]Add Update</a>
 </div>
 <div>
-    <ul>
-
+    <ul class="list-content">
+        {% for update in data %}
+        <li><a href="/update-detail/{{update.id}}">{{update.title}}</a> | <a href="/update-delete/{{update.id}}">[Delete]</a> | <a href="/update-edit/{{update.id}}">[Edit]</a></li>
+        {% endfor %}
     </ul>
 </div>
 {% endblock %}

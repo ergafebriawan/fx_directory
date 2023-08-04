@@ -1,0 +1,19 @@
+{% extends "layout/layout.html" %}
+
+{% block title %} Update {% endblock %}
+{% block title_menu %} Update {% endblock %}
+
+{% block content %}
+<div class="head-detail">
+    <h3>{{data.title}}</h3>
+    <a href="/update"><-back</a>
+</div>
+<div class="content-detail">
+    <p>
+        {{data.content|raw}}
+    </p>
+</div>
+<div class="linking">
+    <a href="/update" class="linking"><-back</a>
+</div>
+{% endblock %}

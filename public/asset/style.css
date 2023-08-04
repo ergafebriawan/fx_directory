@@ -6,6 +6,11 @@ body{
     padding-right: 20px;
 }
 
+.linking{
+    color: rgb(35, 224, 5);
+    margin: 20px 10px;
+}
+
 .navbar{
     display: flex;
     justify-content: space-between;
@@ -49,12 +54,39 @@ body{
     margin-left: 30px;
 }
 
+.list-content li{
+    gap: 5px;
+    margin: 20px 0;
+    list-style: decimal-leading-zero;
+}
+
+.list-content li a{
+    color: rgb(35, 224, 5);
+}
+
 .head-content{
     display: block;
 }
 
+.head-detail{
+    display: flex;
+    justify-items: center;
+}
+
+.head-detail a{
+    margin-top: 20px;
+    margin-left: 60px;
+    color: rgb(35, 224, 5);
+}
+
 .head-content a{
     color: rgb(35, 224, 5);
+}
+
+.content-detail{
+    padding: 20px 15px;
+    border: 2px solid rgb(35, 224, 5);
+    width: fit-content;
 }
 
 .form-group{
