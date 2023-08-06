@@ -11,7 +11,7 @@
 <div>
     <ul class="list-content">
         {% for library in data %}
-        <li><a href="/library-download/{{library.id}}">{{library.title}}</a> | <a href="/library-delete/{{library.id}}">[Delete]</a></li>
+        <li><a href="/library-download/{{library.id}}">{{library.name}}</a> | <a href="/library-delete/{{library.id}}">[Delete]</a></li>
         {% endfor %}
     </ul>
 </div>

@@ -13,7 +13,7 @@ class ProjectController extends BaseController
         $query = $this->c->db->query('SELECT * FROM fx_project ORDER BY id ASC');
         $data = $query->fetch_all(MYSQLI_ASSOC);
 
-        return $this->c->view->render($response, 'project.html', ['data' => $data]);
+        return $this->c->view->render($response, 'project/project.html', ['data' => $data]);
     }
 
     public function add($request, $response){
@@ -29,7 +29,7 @@ class ProjectController extends BaseController
                 return $response->withRedirect('/project-add');
             }
         }else{
-            return $this->c->view->render($response, 'project-add.html');
+            return $this->c->view->render($response, 'project/project-add.html');
         }
     }
 
@@ -61,7 +61,7 @@ class ProjectController extends BaseController
             $data = $this->c->db->query('SELECT * FROM fx_project WHERE id='.$args["id"].' LIMIT 1');
             $data_set = $data->fetch_assoc();
             
-            return $this->c->view->render($response, 'project-update.html', ['data' => $data_set]);
+            return $this->c->view->render($response, 'project/project-update.html', ['data' => $data_set]);
         }
     }
 

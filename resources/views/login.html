@@ -1,0 +1,22 @@
+{% extends "layout/layout.html" %}
+
+{% block title %} Login {% endblock %}
+{% block title_menu %} Login {% endblock %}
+
+{% block content %}
+<h3>Login</h3>
+<div class="form-group">
+    <form action="/login" method="post">
+        <div class="form-input">
+            <label for="title">Title Project</label>
+            <input type="text" name="in_title" id="title" size="100" autofocus>
+        </div>
+        <div class="form-input">
+            <label for="title">Title Project</label>
+            <input type="text" name="in_title" id="title" size="100">
+        </div>
+        <input type="submit" value="Simpan" class="btn">
+    </form>
+</div>
+    
+{% endblock %}

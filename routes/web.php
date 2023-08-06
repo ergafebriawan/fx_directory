@@ -10,6 +10,8 @@ $app->any('/project-update/{id}', '\App\Controllers\ProjectController:edit');
 
 $app->get('/library', '\App\Controllers\LibraryController:index');
 $app->any('/library-upload', '\App\Controllers\LibraryController:add');
+$app->get('/library-delete/{id}', '\App\Controllers\LibraryController:delete');
+$app->get('/library-download/{id}', '\App\Controllers\LibraryController:download');
 
 $app->get('/update', '\App\Controllers\UpdateController:index');
 $app->any('/update-add', '\App\Controllers\UpdateController:add');

@@ -1,5 +1,14 @@
 {% extends "layout/layout.html" %}
 
+{% block additional_script %}
+<script src="/tinymce/js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+        selector: '#content-textarea'
+    });
+</script>
+{% endblock %}
+
 {% block title %} Update {% endblock %}
 {% block title_menu %} Update {% endblock %}
 

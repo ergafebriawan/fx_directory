@@ -9,13 +9,13 @@ class UpdateController extends BaseController
         $query = $this->c->db->query('SELECT * FROM fx_update ORDER BY id ASC');
         $data = $query->fetch_all(MYSQLI_ASSOC);
 
-        return $this->c->view->render($response, 'update.html', ['data' => $data]);
+        return $this->c->view->render($response, 'update/update.html', ['data' => $data]);
     }
 
     public function detail($request, $response, array $args){
         $data = $this->c->db->query('SELECT * FROM fx_update WHERE id='.$args["id"].' LIMIT 1');
         $data_set = $data->fetch_assoc();
-        return $this->c->view->render($response, 'update-detail.html', ['data' => $data_set]);
+        return $this->c->view->render($response, 'update/update-detail.html', ['data' => $data_set]);
     }
 
     public function delete($request, $response, array $args){
@@ -40,7 +40,7 @@ class UpdateController extends BaseController
                 return $response->withRedirect('/update-add');
             }
         }else{
-            return $this->c->view->render($response, 'update-add.html');
+            return $this->c->view->render($response, 'update/update-add.html');
         }
     }
 
@@ -61,7 +61,7 @@ class UpdateController extends BaseController
             $data = $this->c->db->query('SELECT * FROM fx_update WHERE id='.$args["id"].' LIMIT 1');
             $data_set = $data->fetch_assoc();
             
-            return $this->c->view->render($response, 'update-edit.html', ['data' => $data_set]);
+            return $this->c->view->render($response, 'update/update-edit.html', ['data' => $data_set]);
         }
     }
 
