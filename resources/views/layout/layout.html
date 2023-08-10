@@ -20,12 +20,15 @@
                 <li><a href="/">->Home</a></li>
                 <li><a href="/update">->Update</a></li>
                 <li><a href="/library">->Library</a></li>
-                <li><a href="/project">->Project</a></li>
+                {% if session != null  %}
+                    <li><a href="/project">->Project</a></li>
+                {% endif %}
                 <li><a href="/about">->About</a></li>
             </ul>
         </div>
         <div class="riddle">riddle?</div>
     </header>
+    {{app.session.has['admin']}}
 
     <section class="page">
         <div class="sidebar">

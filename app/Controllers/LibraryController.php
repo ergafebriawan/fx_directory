@@ -6,9 +6,12 @@ class LibraryController extends BaseController
 {
     public function index($request, $response)
     {
+        session_start();
+        $session = $_SESSION['admin'];
+
         $exec = $this->c->db->query('SELECT * FROM fx_library ORDER BY id ASC');
         $data = $exec->fetch_all(MYSQLI_ASSOC);
-        return $this->c->view->render($response, 'library/library.html', ['data' => $data]);
+        return $this->c->view->render($response, 'library/library.html', ['data' => $data, 'session' => $session]);
     }
 
     public function add($request, $response, array $args)

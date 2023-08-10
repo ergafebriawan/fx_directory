@@ -1,6 +1,8 @@
 <?php
 $app->get('/', '\App\Controllers\HomeController:index');
 $app->get('/about', '\App\Controllers\HomeController:about');
+$app->any('/login', '\App\Controllers\AuthController:login');
+$app->get('/logout', '\App\Controllers\AuthController:logout');
 
 $app->get('/project', '\App\Controllers\ProjectController:index');
 $app->any('/project-add', '\App\Controllers\ProjectController:add');

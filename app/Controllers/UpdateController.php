@@ -6,10 +6,13 @@ use Illuminate\Support\Facades\Redirect;
 class UpdateController extends BaseController
 {
     public function index($request, $response){
+        session_start();
+        $session = $_SESSION['admin'];
+
         $query = $this->c->db->query('SELECT * FROM fx_update ORDER BY id ASC');
         $data = $query->fetch_all(MYSQLI_ASSOC);
 
-        return $this->c->view->render($response, 'update/update.html', ['data' => $data]);
+        return $this->c->view->render($response, 'update/update.html', ['data' => $data, 'session' => $session]);
     }
 
     public function detail($request, $response, array $args){
