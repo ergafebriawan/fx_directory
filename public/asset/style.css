@@ -1,4 +1,4 @@
-body{
+body {
     background-color: black;
     color: rgb(35, 224, 5);
     font-family: 'Courier Prime', monospace;
@@ -6,100 +6,101 @@ body{
     padding-right: 20px;
 }
 
-.linking{
-    color: rgb(35, 224, 5);
-    margin: 20px 10px;
-}
-
-.navbar{
-    display: flex;
-    justify-content: space-between;
-}
-
-.menu{
-    display: inline-table;
-    list-style: none;
-}
-
-.menu li{
-    float: left;
-    margin: 0 10px;
-}
-
-.menu li a{
-    color: rgb(35, 224, 5);
-    font-weight: bolder;
-}
-
-.riddle{
-    padding-top: 20px;
-    padding-right: 20px;
-    font-weight: bolder;
-}
-
-.page{
+.page {
     margin: 20px;
     display: flex;
     min-height: 77vh;
 }
 
-.sidebar{
+.linking {
+    color: rgb(35, 224, 5);
+    margin: 20px 10px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu {
+    display: inline-table;
+    list-style: none;
+}
+
+.menu li {
+    float: left;
+    margin: 0 10px;
+}
+
+.menu li a {
+    color: rgb(35, 224, 5);
+    font-weight: bolder;
+}
+
+.riddle {
+    margin-top: 20px;
+    margin-right: 20px;
+    font-weight: bolder;
+}
+
+
+.sidebar {
     min-width: 250px;
     margin: 10px 30px;
     border-right: 2px solid rgb(35, 224, 5);
 }
 
-.content{
+.content {
     margin-top: 15px;
     margin-left: 30px;
 }
 
-.list-content li{
+.list-content li {
     gap: 5px;
     margin: 20px 0;
     list-style: decimal-leading-zero;
 }
 
-.list-content li a{
+.list-content li a {
     color: rgb(35, 224, 5);
 }
 
-.head-content{
+.head-content {
     display: block;
 }
 
-.head-detail{
+.head-detail {
     display: flex;
     justify-items: center;
 }
 
-.head-detail a{
+.head-detail a {
     margin-top: 20px;
     margin-left: 60px;
     color: rgb(35, 224, 5);
 }
 
-.head-content a{
+.head-content a {
     color: rgb(35, 224, 5);
 }
 
-.content-detail{
+.content-detail {
     padding: 20px 15px;
     border: 2px solid rgb(35, 224, 5);
     width: fit-content;
 }
 
-.form-group{
+.form-group {
     display: block;
 }
 
-.form-input{
+.form-input {
     display: grid;
     margin-bottom: 30px;
     gap: 5px;
 }
 
-.form-input input{
+.form-input input {
     background-color: black;
     outline: 2px solid rgb(35, 224, 5);
     color: rgb(35, 224, 5);
@@ -108,7 +109,7 @@ body{
     font-size: 16px;
 }
 
-.form-input textarea{
+.form-input textarea {
     background-color: black;
     outline: 2px solid rgb(35, 224, 5);
     color: rgb(35, 224, 5);
@@ -117,7 +118,7 @@ body{
     font-size: 16px;
 }
 
-.btn{
+.btn {
     background-color: black;
     color: rgb(35, 224, 5);
     outline: 2px solid rgb(35, 224, 5);
@@ -127,7 +128,49 @@ body{
     cursor: pointer;
 }
 
-.footer{
+.footer {
     padding: 20px;
     text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        background-color: black;
+        color: rgb(35, 224, 5);
+        font-family: 'Courier Prime', monospace;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .page {
+        margin: 5px;
+        display: block;
+        min-height: 63vh;
+    }
+
+    .menu li {
+        float: none;
+        margin: 10px 0;
+    }
+
+    .sidebar {
+        min-width: 0;
+        margin: 10px 10px;
+        border-right: none;
+    }
+    
+    .content {
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+
+    .menu {
+        display: block;
+        list-style: none;
+    }
+    
+    .menu li a {
+        color: rgb(35, 224, 5);
+        font-weight: bolder;
+    }
 }
