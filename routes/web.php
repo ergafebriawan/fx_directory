@@ -1,8 +1,6 @@
 <?php
 $app->get('/', '\App\Controllers\HomeController:index');
 $app->get('/about', '\App\Controllers\HomeController:about');
-$app->any('/login', '\App\Controllers\AuthController:login');
-$app->get('/logout', '\App\Controllers\AuthController:logout');
 
 $app->get('/project', '\App\Controllers\ProjectController:index');
 $app->any('/project-add', '\App\Controllers\ProjectController:add');
@@ -20,3 +18,7 @@ $app->any('/update-add', '\App\Controllers\UpdateController:add');
 $app->get('/update-detail/{id}', '\App\Controllers\UpdateController:detail');
 $app->get('/update-delete/{id}', '\App\Controllers\UpdateController:delete');
 $app->any('/update-edit/{id}', '\App\Controllers\UpdateController:edit');
+
+$app->any('/login', '\App\Controllers\AuthController:login');
+$app->get('/logout', '\App\Controllers\AuthController:logout');
+$app->post('/riddle', '\App\Controllers\AuthController:riddle');

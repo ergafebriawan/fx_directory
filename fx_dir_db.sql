@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 11, 2023 at 07:56 AM
--- Server version: 5.7.33
--- PHP Version: 7.2.9
+-- Waktu pembuatan: 25 Agu 2023 pada 08.12
+-- Versi server: 5.7.33
+-- Versi PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fx_library`
+-- Struktur dari tabel `fx_answer`
+--
+
+CREATE TABLE `fx_answer` (
+  `id` int(11) NOT NULL,
+  `key` varchar(10) NOT NULL,
+  `answer` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `fx_answer`
+--
+
+INSERT INTO `fx_answer` (`id`, `key`, `answer`) VALUES
+(1, '1', 'vorkuta'),
+(2, '2', 'nidavellir'),
+(3, '3', 'nebula orion'),
+(4, '4', 'vengeance');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `fx_library`
 --
 
 CREATE TABLE `fx_library` (
@@ -35,7 +57,7 @@ CREATE TABLE `fx_library` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `fx_library`
+-- Dumping data untuk tabel `fx_library`
 --
 
 INSERT INTO `fx_library` (`id`, `name`, `path`, `uploaded_at`) VALUES
@@ -44,7 +66,7 @@ INSERT INTO `fx_library` (`id`, `name`, `path`, `uploaded_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fx_project`
+-- Struktur dari tabel `fx_project`
 --
 
 CREATE TABLE `fx_project` (
@@ -56,7 +78,7 @@ CREATE TABLE `fx_project` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `fx_project`
+-- Dumping data untuk tabel `fx_project`
 --
 
 INSERT INTO `fx_project` (`id`, `title`, `content`, `created_at`, `updated_at`) VALUES
@@ -65,7 +87,7 @@ INSERT INTO `fx_project` (`id`, `title`, `content`, `created_at`, `updated_at`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fx_set`
+-- Struktur dari tabel `fx_set`
 --
 
 CREATE TABLE `fx_set` (
@@ -77,7 +99,7 @@ CREATE TABLE `fx_set` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `fx_set`
+-- Dumping data untuk tabel `fx_set`
 --
 
 INSERT INTO `fx_set` (`id`, `title`, `content`, `created_at`, `updated_at`) VALUES
@@ -87,7 +109,7 @@ INSERT INTO `fx_set` (`id`, `title`, `content`, `created_at`, `updated_at`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fx_update`
+-- Struktur dari tabel `fx_update`
 --
 
 CREATE TABLE `fx_update` (
@@ -98,7 +120,7 @@ CREATE TABLE `fx_update` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `fx_update`
+-- Dumping data untuk tabel `fx_update`
 --
 
 INSERT INTO `fx_update` (`id`, `title`, `content`, `created_at`) VALUES
@@ -108,7 +130,7 @@ INSERT INTO `fx_update` (`id`, `title`, `content`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fx_user`
+-- Struktur dari tabel `fx_user`
 --
 
 CREATE TABLE `fx_user` (
@@ -120,7 +142,7 @@ CREATE TABLE `fx_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `fx_user`
+-- Dumping data untuk tabel `fx_user`
 --
 
 INSERT INTO `fx_user` (`id`, `username`, `password`, `created_at`, `updated_at`) VALUES
@@ -131,65 +153,77 @@ INSERT INTO `fx_user` (`id`, `username`, `password`, `created_at`, `updated_at`)
 --
 
 --
--- Indexes for table `fx_library`
+-- Indeks untuk tabel `fx_answer`
+--
+ALTER TABLE `fx_answer`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `fx_library`
 --
 ALTER TABLE `fx_library`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `fx_project`
+-- Indeks untuk tabel `fx_project`
 --
 ALTER TABLE `fx_project`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `fx_set`
+-- Indeks untuk tabel `fx_set`
 --
 ALTER TABLE `fx_set`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `fx_update`
+-- Indeks untuk tabel `fx_update`
 --
 ALTER TABLE `fx_update`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `fx_user`
+-- Indeks untuk tabel `fx_user`
 --
 ALTER TABLE `fx_user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `fx_library`
+-- AUTO_INCREMENT untuk tabel `fx_answer`
+--
+ALTER TABLE `fx_answer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT untuk tabel `fx_library`
 --
 ALTER TABLE `fx_library`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `fx_project`
+-- AUTO_INCREMENT untuk tabel `fx_project`
 --
 ALTER TABLE `fx_project`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `fx_set`
+-- AUTO_INCREMENT untuk tabel `fx_set`
 --
 ALTER TABLE `fx_set`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `fx_update`
+-- AUTO_INCREMENT untuk tabel `fx_update`
 --
 ALTER TABLE `fx_update`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `fx_user`
+-- AUTO_INCREMENT untuk tabel `fx_user`
 --
 ALTER TABLE `fx_user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;

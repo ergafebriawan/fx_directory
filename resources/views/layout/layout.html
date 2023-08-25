@@ -27,9 +27,27 @@
                 <li><a href="/about">->About</a></li>
             </ul>
         </div>
-        <div class="riddle">riddle?</div>
+        <div class="riddle" id="btn-riddle">riddle?</div>
     </header>
-    {{app.session.has['admin']}}
+    
+    <div id="modal-popup" class="bg-modal">
+        <div class="modal-content">
+            <span id="close">&times</span>
+            <div>
+                <div class="header">
+                    <h3>Riddle Me This..?</h3>
+                </div>
+                <div class="body">
+                    <form action="/riddle" method="post">
+                        <div class="form-input">
+                            <input type="text" name="answer" autofocus>
+                        </div>
+                        <input type="submit" value="Answer" class="btn">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section class="page">
         <div class="sidebar">
@@ -47,5 +65,25 @@
         </p>
     </footer>
 </body>
+
+<script>
+    var btn_riddle = document.getElementById("btn-riddle");
+    var modal = document.getElementById('modal-popup');
+    var tutup = document.getElementById("close");
+
+    btn_riddle.onclick = function(){
+        modal.style.display = "block";
+    }
+
+    tutup.onclick = function(){
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(e){
+        if(e.target == modal){
+            modal.style.display = "none";
+        }
+    }
+</script>
 
 </html>

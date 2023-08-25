@@ -8,6 +8,8 @@ class HomeController extends BaseController
     {
         session_start();
         $session = $_SESSION['admin'];
+
+        
         
         $data = $this->c->db->query('SELECT * FROM fx_set WHERE title="pengantar" LIMIT 1');
         $data_set = $data->fetch_assoc();

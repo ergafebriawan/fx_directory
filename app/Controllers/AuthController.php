@@ -34,4 +34,8 @@ class AuthController extends BaseController
         session_destroy();
         return $response->withRedirect('/');
     }
+
+    public function riddle($request, $response){
+        $answer = $_POST['answer'];
+    }
 }

@@ -2,10 +2,11 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+
 $app = new Slim\App([
     'settings' => [
         'displayErrorDetails' => true,
-         'db' => [
+        'db' => [
             'driver'   => 'mysql',
             'host'     => 'localhost',
             'database' => 'fx_dir_db',
