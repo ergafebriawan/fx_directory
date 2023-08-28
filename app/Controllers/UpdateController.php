@@ -7,7 +7,10 @@ class UpdateController extends BaseController
 {
     public function index($request, $response){
         session_start();
-        $session = $_SESSION['admin'];
+        $session = '';
+        if(isset($_SESSION['admin'])){
+            $session = $_SESSION['admin'];
+        }
 
         $query = $this->c->db->query('SELECT * FROM fx_update ORDER BY id ASC');
         $data = $query->fetch_all(MYSQLI_ASSOC);

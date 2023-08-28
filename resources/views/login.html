@@ -6,7 +6,7 @@
 {% block content %}
 <h3>Login</h3>
 <div class="form-group">
-    <form action="/login" method="post">
+    <form action="/login/{{key}}" method="post">
         <div class="form-input">
             <label for="username">Username</label>
             <input type="text" name="in_username" id="username" size="40" autofocus>

@@ -7,7 +7,10 @@ class LibraryController extends BaseController
     public function index($request, $response)
     {
         session_start();
-        $session = $_SESSION['admin'];
+        $session = '';
+        if(isset($_SESSION['admin'])){
+            $session = $_SESSION['admin'];
+        }
 
         $exec = $this->c->db->query('SELECT * FROM fx_library ORDER BY id ASC');
         $data = $exec->fetch_all(MYSQLI_ASSOC);

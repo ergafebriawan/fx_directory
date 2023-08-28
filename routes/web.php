@@ -19,6 +19,6 @@ $app->get('/update-detail/{id}', '\App\Controllers\UpdateController:detail');
 $app->get('/update-delete/{id}', '\App\Controllers\UpdateController:delete');
 $app->any('/update-edit/{id}', '\App\Controllers\UpdateController:edit');
 
-$app->any('/login', '\App\Controllers\AuthController:login');
+$app->any('/login/{token}', '\App\Controllers\AuthController:login');
 $app->get('/logout', '\App\Controllers\AuthController:logout');
 $app->post('/riddle', '\App\Controllers\AuthController:riddle');
