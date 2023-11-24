@@ -1,0 +1,333 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Fx directory openapi",
+    "version": "1.0",
+    "description": "Open API for fx-directory all apps",
+    "termsOfService": "fx-directory",
+    "contact": {
+      "name": "fx-directory",
+      "email": "fxdirectory002@gmail.com",
+      "url": "https://www.fx-directory.com"
+    },
+    "license": {
+      "name": "APACHE 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://{environment}.fx-directory.com/api/v1",
+      "description": "api for all apps fx-directory",
+      "variables": {
+        "environment": {
+          "default": "dev",
+          "description": "server environment",
+          "enum": [
+            "dev",
+            "prod"
+          ]
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/login": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "login apps",
+        "description": "auth data from server fx-directory",
+        "responses": {}
+      }
+    },
+    "/logout": {
+      "get": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "logout apps",
+        "description": "close auth the to server fx-directory",
+        "responses": {}
+      }
+    },
+    "/project": {
+      "get": {
+        "tags": [
+          "project"
+        ],
+        "security": [
+          {
+            "ProjectAuth": []
+          }
+        ],
+        "summary": "get all data project fx-directory",
+        "description": "get all list data project from secret project fx-directory",
+        "parameters": [
+          {
+            "name": "include_done",
+            "in": "query",
+            "required": false,
+            "description": "is include done project",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "nama",
+            "in": "query",
+            "required": false,
+            "description": "filter project by name",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "get all data project",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Project"
+                  }
+                },
+                "examples": {
+                  "success": {
+                    "description": "success get data project nidavellir",
+                    "value": [
+                      {
+                        "id": "1",
+                        "title_project": "nidavellir",
+                        "content": "lorem ipsum dolor amet",
+                        "archive": false,
+                        "create_project": "23-09-2023 10:32:45",
+                        "update_project": "23-09-2023 10:32:45"
+                      },
+                      {
+                        "id": "2",
+                        "title_project": "vorkuta",
+                        "content": "lorem ipsum dolor amet",
+                        "archive": false,
+                        "create_project": "23-09-2023 10:32:45",
+                        "update_project": "23-09-2023 10:32:45"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "project"
+        ],
+        "security": [
+          {
+            "ProjectAuth": []
+          }
+        ],
+        "summary": "add project fx-directory",
+        "description": "adding new project fx-directory",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrUpdateProject"
+              },
+              "examples": {
+                "nidavellir": {
+                  "description": "add data project",
+                  "value": {
+                    "title_project": "nidavellir",
+                    "content": "lorem ipsum dolor amet new"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "success adding data project",
+            "content": {
+              "application/json":{
+                "schema":{
+                  "type": "object",
+                  "properties": {
+                    "success":{
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "examples":{
+                  "success":{
+                    "description": "success example adding data project",
+                    "value":{
+                      "success":true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400":{
+            "description": "failed add data project",
+            "content": {
+              "application/json":{
+                "schema":{
+                  "$ref": "#/components/schemas/Success"
+                },
+                "examples": {
+                  "failed":{
+                    "description": "failed example adding data project",
+                    "value":{
+                      "success":false
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/project/{idproject}": {
+      "get": {
+        "tags": [
+          "project"
+        ],
+        "security": [
+          {
+            "ProjectAuth": []
+          }
+        ],
+        "summary": "get detail project fx-directory",
+        "description": "get detail project from data fx-directory",
+        "parameters": [
+          {
+            "name": "idproject",
+            "in": "path",
+            "required": true,
+            "description": "project id for get one data",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {}
+      },
+      "put": {
+        "security": [
+          {
+            "ProjectAuth": []
+          }
+        ],
+        "tags": [
+          "project"
+        ],
+        "summary": "update data project fx-directory",
+        "description": "update content data project fx-directory",
+        "parameters": [
+          {
+            "name": "idproject",
+            "in": "path",
+            "required": true,
+            "description": "project id update content",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {}
+      },
+      "delete": {
+        "security": [
+          {
+            "ProjectAuth": []
+          }
+        ],
+        "tags": [
+          "project"
+        ],
+        "summary": "delete data project fx-directory",
+        "description": "delete project data fx-directory",
+        "parameters": [
+          {
+            "name": "idproject",
+            "in": "path",
+            "required": true,
+            "description": "project id for delete",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {}
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ProjectAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-Key"
+      }
+    },
+    "parameters": {},
+    "schemas": {
+      "Project": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title_project": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "archive": {
+            "type": "boolean",
+            "default": false
+          },
+          "create_project": {
+            "type": "string"
+          },
+          "update_project": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateOrUpdateProject": {
+        "type": "object",
+        "properties": {
+          "title_project": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          }
+        }
+      },
+      "Success":{
+        "type": "object",
+        "properties": {
+          "success":{
+            "type": "boolean",
+            "default":false
+          }
+        }
+      }
+
+    }
+  }
+}

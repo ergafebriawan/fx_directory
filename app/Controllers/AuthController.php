@@ -26,7 +26,7 @@ class AuthController extends BaseController
                     $this->c->db->query('UPDATE fx_user SET updated_at=CURRENT_TIMESTAMP WHERE id=' . $data['id']);
                     return $response->withRedirect('/');
                 } else {
-                    return $response->withRedirect('/login');
+                    return $response->withRedirect('/login/'.$args['token']);
                 }
             } else {
                 session_start();

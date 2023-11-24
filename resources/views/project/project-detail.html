@@ -4,21 +4,28 @@
 {% block title_menu %} Project detail {% endblock %}
 
 {% block content %}
-<div class="head-detail">
-    <h3>{{data.title}}</h3>
-    <a href="/project"><-back</a>
-    <a href="/project-update/{{data.id}}">[/]Edit</a>
-</div>
-<div class="linking">
-    <label>Document created at: {{data.created_at}}</label>
-</div>
-<div class="content-detail">
-    <p>
-        {{data.content|raw}}
-    </p>
-</div>
-<div class="linking">
-    <a href="/project" class="linking"><-back</a>
-    <a href="/project-update/{{data.id}}" class="linking">[/]Edit</a>
+<div class="show-detail">
+    <div class="info">
+        <div class="head-detail">
+            <h3>{{data.title}}</h3>
+            <a href="/project"><-back</a>
+            <a href="/project-update/{{data.id}}">[/]Edit</a>
+        </div>
+        <div class="linking">
+            <label>Document created at: {{data.created_at}}</label>
+        </div>
+        <div class="content-detail">
+            <p>
+                {{data.content|raw}}
+            </p>
+        </div>
+        <div class="linking">
+            <a href="/project" class="linking"><-back</a>
+            <a href="/project-update/{{data.id}}" class="linking">[/]Edit</a>
+        </div>
+    </div>
+    <!-- <div class="attach">
+        <p>this is attachment page</p>
+    </div> -->
 </div>
 {% endblock %}

@@ -1,9 +1,4 @@
 <?php
-/*
- * HomeController only for controller sample
- * @hilmanrdn 18-01-2017
- */
-
 namespace App\Controllers;
 
 class ProjectController extends BaseController
@@ -54,7 +49,7 @@ class ProjectController extends BaseController
 
         $data = $this->c->db->query('SELECT * FROM fx_project WHERE id='.$args["id"].' LIMIT 1');
         $data_set = $data->fetch_assoc();
-        return $this->c->view->render($response, 'project-detail.html', ['data' => $data_set, 'session' => $session]);
+        return $this->c->view->render($response, 'project/project-detail.html', ['data' => $data_set, 'session' => $session]);
     }
 
     public function delete($request, $response, array $args){
@@ -93,5 +88,18 @@ class ProjectController extends BaseController
             return $this->c->view->render($response, 'project/project-update.html', ['data' => $data_set, 'session' => $session]);
         }
     }
+
+    //controller for API
+    public function get_all($resquest, $response){}
+
+    public function add_project($request, $response){}
+
+    public function get_detail($request, $response){}
+
+    public function update_project($request, $response){}
+
+    public function delete_project($request, $response){}
+
+    public function archive_project($request, $response){}
 
 }

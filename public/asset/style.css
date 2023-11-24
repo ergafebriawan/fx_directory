@@ -90,6 +90,10 @@ body {
     width: fit-content;
 }
 
+.show-detail{
+    display: inline;
+}
+
 .form-group {
     display: block;
 }
